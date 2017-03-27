@@ -1,0 +1,75 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>개인 페이지</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <script>
+            var score = 0;
+
+            // 나이 값을 표시함
+            function myAge() {
+                var age = document.getElementById("age").value;
+                document.getElementById("ageString").innerHTML=age+"살?";
+            }
+
+            function call() {
+
+                if(form01.age.value == 28) { score += 25; }
+                if(form01.hobby[1].checked && form01.hobby[2].checked) { score += 25; }
+                if(form01.bloodType[0].checked) { score += 25; }
+                if(form01.season.value == "fall") { score += 25; }
+
+                alert(score + "점\n"
+                    + "저는 28살 입니다." + "\n"
+                    + "저는 책읽기와 게임하기를 좋아합니다." + "\n"
+                    + "제 혈액형은 A형이지만 소심하진 않아요." + "\n"
+                    + "그리고 전 가을을 좋아합니다." + "\n");
+
+            }
+        </script>
+    </head>
+    <body>
+        <header>
+            Introduce Myself!
+        </header>
+        <section>
+            <figure class="picture">
+                <img src="img/profile.jpg" alt="missing link" id="yunha" />
+            </figure>
+            <figure class="picture">
+                <h1>저를 아십니까?</h1>
+                <form name="form01">
+                    이 사람의 나이는?<br />
+                    <input type="range" name="age" min=10 max=40 id="age" onInput="myAge()"/>
+                    <span id="ageString">몇 살?</span>
+
+                    <br /><br />
+                    이 사람의 취미는? <br />
+                    <input type="checkbox" name="hobby" value="Running" />달리기
+                    <input type="checkbox" name="hobby" value="Reading" />책읽기
+                    <input type="checkbox" name="hobby" value="Gaming" />게임하기
+                    <input type="checkbox" name="hobby" value="napping" />낮잠자기
+                    <br /><br />
+                    혈액형은? <br />
+                    <input type="radio" name="bloodType" value="a" />A형
+                    <input type="radio" name="bloodType" value="ab" />AB형
+                    <input type="radio" name="bloodType" value="b" />B형
+                    <input type="radio" name="bloodType" value="o" />O형
+                    <br /><br />
+                    좋아하는 계절은?
+                    <select id="season" name="season">
+                        <option value="spring">봄</option>
+                        <option value="summer">여름</option>
+                        <option value="fall">가을</option>
+                        <option value="winter">겨울</option>
+                    </select>
+                    <br /><br />
+                    <input type="submit" value="확인해보기>>" onclick="call()"/>
+                </form>
+            </figure>
+        </section>
+        <footer>
+            2017 Park, Yunha
+        </footer>
+    </body>
+</html>
