@@ -3,8 +3,10 @@
     <title>
         Team CTO - Yunha
     </title>
-    <link rel="stylesheet" href="css/meal_style.css">
-    <link rel="stylesheet" href="css/style_main.css">
+    <link rel="stylesheet" type="text/css" href="css/style_main.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="css/figure.css" media="screen" />
+    <script type="text/javascript" src="js/intro.js"></script>
+    
 </head>
 <body>
     <header>
@@ -12,16 +14,14 @@
     </header>
     <div class="row">
         <div class="col-5 intro">
-            <figure>
-                <img src="images/profile.jpg" alt="missing picture" id="yunha" />
+            <figure class="col-12">
+                <img src="images/moon.jpg" alt="missing picture" id="yunha" />
                 <figcaption>
-                    <h1>저를 아십니까?</h1>
+                    <h3>저를 아십니까?</h3>
                     <form name="form01">
                         이 사람의 나이는?<br />
                         <input type="range" name="age" min=10 max=40 id="age" onInput="myAge()"/>
-                        <span id="ageString">몇 살?</span>
-
-                        <br /><br />
+                        <div id="ageString">몇 살?</div><br>
                         이 사람의 취미는? <br />
                         <input type="checkbox" name="hobby" value="Running" />달리기
                         <input type="checkbox" name="hobby" value="Reading" />책읽기
@@ -46,9 +46,12 @@
                     </form>
                 </figcaption>
             </figure>
-
         </div>
         <div class="col-7 lunch-ranking">
+            
         </div>
     </div>
+    <footer>
+        2017 Team CTO All right reserved.
+    </footer>
 </body>
