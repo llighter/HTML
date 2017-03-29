@@ -1,0 +1,54 @@
+<!doctype html>
+<head>
+    <title>
+        Team CTO - Yunha
+    </title>
+    <link rel="stylesheet" href="css/meal_style.css">
+    <link rel="stylesheet" href="css/style_main.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Yunha's Page</h1>
+    </header>
+    <div class="row">
+        <div class="col-5 intro">
+            <figure>
+                <img src="images/profile.jpg" alt="missing picture" id="yunha" />
+                <figcaption>
+                    <h1>저를 아십니까?</h1>
+                    <form name="form01">
+                        이 사람의 나이는?<br />
+                        <input type="range" name="age" min=10 max=40 id="age" onInput="myAge()"/>
+                        <span id="ageString">몇 살?</span>
+
+                        <br /><br />
+                        이 사람의 취미는? <br />
+                        <input type="checkbox" name="hobby" value="Running" />달리기
+                        <input type="checkbox" name="hobby" value="Reading" />책읽기
+                        <input type="checkbox" name="hobby" value="Gaming" />게임하기
+                        <input type="checkbox" name="hobby" value="napping" />낮잠자기
+                        <br /><br />
+                        혈액형은? <br />
+                        <input type="radio" name="bloodType" value="a" />A형
+                        <input type="radio" name="bloodType" value="ab" />AB형
+                        <input type="radio" name="bloodType" value="b" />B형
+                        <input type="radio" name="bloodType" value="o" />O형
+                        <br /><br />
+                        좋아하는 계절은?
+                        <select id="season" name="season">
+                            <option value="spring">봄</option>
+                            <option value="summer">여름</option>
+                            <option value="fall">가을</option>
+                            <option value="winter">겨울</option>
+                        </select>
+                        <br /><br />
+                        <input type="submit" value="확인해보기>>" onclick="call()"/>
+                    </form>
+                </figcaption>
+            </figure>
+
+        </div>
+        <div class="col-7 lunch-ranking">
+        </div>
+    </div>
+</body>

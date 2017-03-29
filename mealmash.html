@@ -71,8 +71,11 @@
     Declare
     * Declare Objects for elo rating
     * Object Properties
+        - id
         - name
         - R : currentRate
+        - store : name of store
+        - distance : min
     * Declare function
         - getRatingDelta(myRating, opponentRating, myGameResult)
             - @param myRating : my currentRate
@@ -98,14 +101,14 @@
     
     var currentState = {left: 1, right: 2};
     var myArray = [];
-    myArray.push({id: 0, name: 'a', R: 1500});
-    myArray.push({id: 1, name: 'b', R: 1500});
-    myArray.push({id: 2, name: 'c', R: 1500});
-    myArray.push({id: 3, name: 'd', R: 1500});
-    myArray.push({id: 4, name: 'e', R: 1500});
-    myArray.push({id: 5, name: 'f', R: 1500});
-    myArray.push({id: 6, name: 'g', R: 1500});
-    myArray.push({id: 7, name: 'h', R: 1500});
+    myArray.push({id: 0, name: 'a', R: 1500, store: "대우식당", location: 10});
+    myArray.push({id: 0, name: 'b', R: 1500, store: "호랑이식당", location: 15});
+    myArray.push({id: 0, name: 'c', R: 1500, store: "무월식탁", location: 8});
+    myArray.push({id: 0, name: 'd', R: 1500, store: "강남불백", location: 3});
+    myArray.push({id: 0, name: 'e', R: 1500, store: "이자와", location: 9});
+    myArray.push({id: 0, name: 'f', R: 1500, store: "딸부자네불백", location: 20});
+    myArray.push({id: 0, name: 'g', R: 1500, store: "두부공작소", location: 15});
+    myArray.push({id: 0, name: 'h', R: 1500, store: "스노우폭스 뱅뱅점", location: 25});
     
     setTable();
     setStage();
