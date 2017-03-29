@@ -13,9 +13,11 @@
     </header>
     <div class="row">
         <div class="col-5 intro">
-            <figure class="col-12">
-                <img src="images/moon.jpg" alt="missing picture" id="yunha" />
-                <figcaption>
+            <div class="figure col-12">
+                <div class="col-6">
+                    <img class="profile" src="images/profile.jpg" alt="missing picture" id="yunha" />
+                </div>
+                <div class="profile-detail col-6">
                     <h3>저를 아십니까?</h3>
                     <form name="form01">
                         이 사람의 나이는?<br />
@@ -43,8 +45,8 @@
                         <br /><br />
                         <input type="submit" value="확인해보기>>" onclick="call()"/>
                     </form>
-                </figcaption>
-            </figure>
+                </div>
+            </div>
         </div>
         <div class="col-7 lunch-ranking">
             <section class="col-12">
@@ -55,7 +57,7 @@
                     <img class="match" id="right" name="b" onclick="chooseRight(this);"/>
                 </section>
                 <section class="detail col-5">
-                    <div>
+                    <div class="unit">
                         <h1>Elo Rating</h1>
                         <div id="div01">
                             <img id="img01"/>

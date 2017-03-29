@@ -1,6 +1,6 @@
 section {
     display: inline;
-    float: left;
+    /*float: left;*/
     border: thin solid black;
     /* background-color: #FFD393; */
 }
@@ -16,7 +16,7 @@ img.match {
     padding: 10px;
 }
 
-div img {
+.unit img {
     width: 70px;
     height: 70px;
 }

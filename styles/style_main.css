@@ -22,9 +22,24 @@ header {
     display: table;
 }
 
-/*div.row {
-    background-color: #FFD393;
-}*/
+.figure {
+    border: 1px solid #990100;
+    background-color: #F6F6F6;
+    display: inline;
+    margin: 0;
+}
+.profile {
+    max-width: 100%;
+    width: 100%;
+    height: auto;
+}
+.profile-detail {
+    padding: 10px;
+    color: #333333;
+    background-color: #E8E8E8;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 footer {
     background-color: #1F8A70;
