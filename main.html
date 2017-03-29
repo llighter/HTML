@@ -3,10 +3,9 @@
     <title>
         Team CTO - Yunha
     </title>
-    <link rel="stylesheet" type="text/css" href="css/style_main.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/figure.css" media="screen" />
-    <script type="text/javascript" src="js/intro.js"></script>
-    
+    <link rel="stylesheet" type="text/css" href="styles/style_main.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="styles/style_meal.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="styles/figure.css" media="screen" />    
 </head>
 <body>
     <header>
@@ -17,41 +16,95 @@
             <figure class="col-12">
                 <img src="images/moon.jpg" alt="missing picture" id="yunha" />
                 <figcaption>
-                    <h3>Ï†ÄÎ•º ÏïÑÏã≠ÎãàÍπå?</h3>
+                    <h3>¿˙∏¶ æ∆Ω ¥œ±Ó?</h3>
                     <form name="form01">
-                        Ïù¥ ÏÇ¨ÎûåÏùò ÎÇòÏù¥Îäî?<br />
+                        ¿Ã ªÁ∂˜¿« ≥™¿Ã¥¬?<br />
                         <input type="range" name="age" min=10 max=40 id="age" onInput="myAge()"/>
-                        <div id="ageString">Î™á ÏÇ¥?</div><br>
-                        Ïù¥ ÏÇ¨ÎûåÏùò Ï∑®ÎØ∏Îäî? <br />
-                        <input type="checkbox" name="hobby" value="Running" />Îã¨Î¶¨Í∏∞
-                        <input type="checkbox" name="hobby" value="Reading" />Ï±ÖÏùΩÍ∏∞
-                        <input type="checkbox" name="hobby" value="Gaming" />Í≤åÏûÑÌïòÍ∏∞
-                        <input type="checkbox" name="hobby" value="napping" />ÎÇÆÏû†ÏûêÍ∏∞
+                        <div id="ageString">∏Ó ªÏ?</div><br>
+                        ¿Ã ªÁ∂˜¿« √ÎπÃ¥¬? <br />
+                        <input type="checkbox" name="hobby" value="Running" />¥ﬁ∏Æ±‚
+                        <input type="checkbox" name="hobby" value="Reading" />√•¿–±‚
+                        <input type="checkbox" name="hobby" value="Gaming" />∞‘¿”«œ±‚
+                        <input type="checkbox" name="hobby" value="napping" />≥∑¿·¿⁄±‚
                         <br /><br />
-                        ÌòàÏï°ÌòïÏùÄ? <br />
-                        <input type="radio" name="bloodType" value="a" />AÌòï
-                        <input type="radio" name="bloodType" value="ab" />ABÌòï
-                        <input type="radio" name="bloodType" value="b" />BÌòï
-                        <input type="radio" name="bloodType" value="o" />OÌòï
+                        «˜æ◊«¸¿∫? <br />
+                        <input type="radio" name="bloodType" value="a" />A«¸
+                        <input type="radio" name="bloodType" value="ab" />AB«¸
+                        <input type="radio" name="bloodType" value="b" />B«¸
+                        <input type="radio" name="bloodType" value="o" />O«¸
                         <br /><br />
-                        Ï¢ãÏïÑÌïòÎäî Í≥ÑÏ†àÏùÄ?
+                        ¡¡æ∆«œ¥¬ ∞Ë¿˝¿∫?
                         <select id="season" name="season">
-                            <option value="spring">Î¥Ñ</option>
-                            <option value="summer">Ïó¨Î¶Ñ</option>
-                            <option value="fall">Í∞ÄÏùÑ</option>
-                            <option value="winter">Í≤®Ïö∏</option>
+                            <option value="spring">∫Ω</option>
+                            <option value="summer">ø©∏ß</option>
+                            <option value="fall">∞°¿ª</option>
+                            <option value="winter">∞‹øÔ</option>
                         </select>
                         <br /><br />
-                        <input type="submit" value="ÌôïÏù∏Ìï¥Î≥¥Í∏∞>>" onclick="call()"/>
+                        <input type="submit" value="»Æ¿Œ«ÿ∫∏±‚>>" onclick="call()"/>
                     </form>
                 </figcaption>
             </figure>
         </div>
         <div class="col-7 lunch-ranking">
-            
+            <section class="col-12">
+                <section class="main col-7">
+                    <h1>A or B That's the problem.</h1>
+                    <img class="match" id="left" name="a" onclick="chooseLeft(this);"/>
+                    <span> vs. </span>
+                    <img class="match" id="right" name="b" onclick="chooseRight(this);"/>
+                </section>
+                <section class="detail col-5">
+                    <div>
+                        <h1>Elo Rating</h1>
+                        <div id="div01">
+                            <img id="img01"/>
+                            <span id="r01"></span>
+                            <span id="name01"></span>
+                        </div>
+                        <div id="div02">
+                            <img id="img02"/>
+                            <span id="r02"></span>
+                            <span id="name02"></span>
+                        </div>
+                        <div id="div03">
+                            <img id="img03"/>
+                            <span id="r03"></span>
+                            <span id="name03"></span>
+                        </div>
+                        <div id="div04">
+                            <img id="img04"/>
+                            <span id="r04"></span>
+                            <span id="name04"></span>
+                        </div>
+                        <div id="div05">
+                            <img id="img05"/>
+                            <span id="r05"></span>
+                            <span id="name05"></span>
+                        </div>
+                        <div id="div06">
+                            <img id="img06"/>
+                            <span id="r06"></span>
+                            <span id="name06"></span>
+                        </div>
+                        <div id="div07">
+                            <img id="img07"/>
+                            <span id="r07"></span>
+                            <span id="name07"></span>
+                        </div>
+                        <div id="div08">
+                            <img id="img08"/>
+                            <span id="r08"></span>
+                            <span id="name08"></span>
+                        </div>
+                    </div>
+                </section>
+            </section>
         </div>
     </div>
     <footer>
         2017 Team CTO All right reserved.
     </footer>
+    <script type="text/javascript" src="js/intro.js"></script>
+    <script type="text/javascript" src="js/elo.js"></script>
 </body>

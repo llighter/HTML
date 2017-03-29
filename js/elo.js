@@ -1,44 +1,121 @@
 /*
-    Declare
-    * Declare Objects for elo rating
-    * Object Properties
-        - name
-        - R : currentRate
-    * Declare function
-        - getRatingDelta(myRating, opponentRating, myGameResult)
-            - @param myRating : my currentRate
-            - @param opponentRating : opponent's currentRate
-            - @param myGameResult : 1 for win, 0 for lose, 0.5 for drew
-            - return K(Sa - Ea)
-        - getNewRating(myRating, opponentRating, myGameResult)
-            - @param myRating : my currentRate
-            - @param opponentRating : opponent's currentRate
-            - @param myGameResult : 1 for win, 0 for lose, 0.5 for drew
-            - return R' = R + K(Sa - Ea)
+Declare
+* Declare Objects for elo rating
+* Object Properties
+    - id
+    - name
+    - R : currentRate
+    - store : name of store
+    - distance : min
+* Declare function
+    - getRatingDelta(myRating, opponentRating, myGameResult)
+        - @param myRating : my currentRate
+        - @param opponentRating : opponent's currentRate
+        - @param myGameResult : 1 for win, 0 for lose, 0.5 for drew
+        - return K(Sa - Ea)
+    - getNewRating(myRating, opponentRating, myGameResult)
+        - @param myRating : my currentRate
+        - @param opponentRating : opponent's currentRate
+        - @param myGameResult : 1 for win, 0 for lose, 0.5 for drew
+        - return R' = R + K(Sa - Ea)
 
-    TEST
-    * ê°ì²´ë¡œ ì´ë£¨ì–´ì§„ ë°°ì—´ì„ ìƒì„±í•œë‹¤.
-        - type Restorant
-    * initial R value : 1500
-    * ëŒ€ì§„ì„ ê²°ì •í•˜ê¸° ìœ„í•´ random ê°’ì„ ìƒì„±í•œë‹¤.
-        - [?]í† ë„ˆë¨¼íŠ¸ê°€ ì•„ë‹ˆê¸° ë•Œë¬¸ì— ë‘ê°œì˜ ê°’ë§Œ ì§€ì†ì ìœ¼ë¡œ ë½‘ì•„ì£¼ë©´ ëœë‹¤.
-        - [?]ëŒ€ê²°í•˜ëŠ” ë‘íŒ€ì€ ì™„ì „ ëœë¤ìœ¼ë¡œ í• ê²ƒì¸ì§€? ì•„ë‹ˆë©´ propertyë¥¼ ì¶”ê°€í•´ì„œ 
-            ìµœëŒ€ ëŒ€ê²°ê°’ì„ ì œí•œí•˜ëŠ” ë°©ë²•ë„ ìˆë‹¤.
-    * ëŒ€ì§„ ì§„í–‰ë˜ë©´ì„œ ì‹¤ì‹œê°„ ê²°ê³¼ë¥¼ í‘œì‹œí•œë‹¤.
- */
+TEST
+* °´Ã¼·Î ÀÌ·ç¾îÁø ¹è¿­À» »ı¼ºÇÑ´Ù.
+    - type Restorant
+* initial R value : 1500
+* ´ëÁøÀ» °áÁ¤ÇÏ±â À§ÇØ random °ªÀ» »ı¼ºÇÑ´Ù.
+    - [?]Åä³Ê¸ÕÆ®°¡ ¾Æ´Ï±â ¶§¹®¿¡ µÎ°³ÀÇ °ª¸¸ Áö¼ÓÀûÀ¸·Î »Ì¾ÆÁÖ¸é µÈ´Ù.
+    - [?]´ë°áÇÏ´Â µÎÆÀÀº ¿ÏÀü ·£´ıÀ¸·Î ÇÒ°ÍÀÎÁö? ¾Æ´Ï¸é property¸¦ Ãß°¡ÇØ¼­ 
+        ÃÖ´ë ´ë°á°ªÀ» Á¦ÇÑÇÏ´Â ¹æ¹ıµµ ÀÖ´Ù.
+* ´ëÁø ÁøÇàµÇ¸é¼­ ½Ç½Ã°£ °á°ú¸¦ Ç¥½ÃÇÑ´Ù.
+*/
+var currentState = {left: 1, right: 2};
+var myArray = [];
+myArray.push({id: 0, name: 'a', R: 1500, store: "´ë¿ì½Ä´ç", distance: 10});
+myArray.push({id: 1, name: 'b', R: 1500, store: "È£¶ûÀÌ½Ä´ç", distance: 15});
+myArray.push({id: 2, name: 'c', R: 1500, store: "¹«¿ù½ÄÅ¹", distance: 8});
+myArray.push({id: 3, name: 'd', R: 1500, store: "°­³²ºÒ¹é", distance: 3});
+myArray.push({id: 4, name: 'e', R: 1500, store: "ÀÌÀÚ¿Í", distance: 9});
+myArray.push({id: 5, name: 'f', R: 1500, store: "µşºÎÀÚ³×ºÒ¹é", distance: 20});
+myArray.push({id: 6, name: 'g', R: 1500, store: "µÎºÎ°øÀÛ¼Ò", distance: 15});
+myArray.push({id: 7, name: 'h', R: 1500, store: "½º³ë¿ìÆø½º ¹ğ¹ğÁ¡", distance: 25});
+
+setTable();
+setStage();
+
+function setTable() {
+    for(var i=0; i < myArray.length; i++) {
+        // °´Ã¼ Á¤·Ä
+        myArray.sort(function(a,b) {
+            return a.R > b.R ? -1 : a.R < b.R ? 1 : 0;
+        });
+        
+        document.getElementById("img0"+(i+1)).src = "images/"+myArray[i].name+".jpg"
+        document.getElementById("r0"+(i+1)).innerHTML = myArray[i].R;
+        document.getElementById("name0"+(i+1)).innerHTML = myArray[i].name;
+    }
+}
+
+function setStage() {
+    var check;
+    currentState.left = Math.floor((Math.random() * 7) + 1);
+
+    while(1) {
+        check = Math.floor((Math.random() * 7) + 1);
+        if(check != currentState.left) {
+            currentState.right = check;
+            break;
+        }
+    }
+    console.log(currentState.left + ', ' + currentState.right);
+
+    document.getElementById("left").src = "images/"+myArray[currentState.left].name+".jpg";
+    document.getElementById("right").src = "images/"+myArray[currentState.right].name+".jpg";
+    document.getElementById("left").name = myArray[currentState.left].name;
+    document.getElementById("right").name = myArray[currentState.left].name;
+}
+
+function chooseLeft(obj) {
+    for(var i = 0; myArray.length; i++) {
+        console.log(obj.name + ', ' + myArray[i].name + ', ' + (obj.name == myArray[i].name));
+        
+        if(obj.name == myArray[i].name) {
+            // alert(getNewRating(myArray[currentState.left].R, myArray[currentState.right].R, 1));
+            myArray[currentState.left].R =  getNewRating(myArray[currentState.left].R, myArray[currentState.right].R, 1);
+            myArray[currentState.right].R = getNewRating(myArray[currentState.right].R, myArray[currentState.left].R, 0);
+            break;
+        }
+    }
+    setTable();
+    setStage();
+}
+
+function chooseRight(obj) {
+    for(var i = 0; myArray.length; i++) {
+        console.log(obj.name + ', ' + myArray[i].name + ', ' + (obj.name == myArray[i].name));
+
+        if(obj.name == myArray[i].name) {
+            myArray[currentState.right].R =  getNewRating(myArray[currentState.right].R, myArray[currentState.left].R, 1);
+            myArray[currentState.left].R = getNewRating(myArray[currentState.left].R, myArray[currentState.right].R, 0);
+
+            break;
+        }
+    }
+    setTable();
+    setStage();
+}
 
 function getRatingDelta(myRating, opponentRating, myGameResult) {
-    if([0, 0.5, 1].indexOf(myGameResult === -1)) {
-        return null;
+    if ([0, 0.5, 1].indexOf(myGameResult) === -1) {
+    return null;
     }
+    
+    var myChanceToWin = 1 / ( 1 + Math.pow(10, (opponentRating - myRating) / 400));
 
-    var evalAgainstOppon = 1/ (1 + Math.pow(10, (opponentRating - myRating) / 400));
-
-    return Math.round(32 * (myGameResult - evalAgainstOppon));
+    return Math.round(32 * (myGameResult - myChanceToWin));
 }
 
 function getNewRating(myRating, opponentRating, myGameResult) {
     return myRating + getRatingDelta(myRating, opponentRating, myGameResult);
 }
-
 

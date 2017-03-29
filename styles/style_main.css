@@ -7,9 +7,13 @@ in the total width and height of the elements.
 }
 
 header {
+    font-size: x-large;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #004358;
     border: 1px solid red;
     /* padding: 15px; */
-    /* position 겹치지 않는 속성 알아보기 */
 }
 
 .row::after {
@@ -18,8 +22,12 @@ header {
     display: table;
 }
 
+/*div.row {
+    background-color: #FFD393;
+}*/
+
 footer {
-    background-color: #0099cc;
+    background-color: #1F8A70;
     color: #ffffff;
     text-align: center;
     font-size: 15px;

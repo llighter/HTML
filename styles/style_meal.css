@@ -1,0 +1,26 @@
+section {
+    display: inline;
+    float: left;
+    border: thin solid black;
+    /* background-color: #FFD393; */
+}
+
+section h1 {
+    text-align: center;
+}
+
+img.match {
+    max-width: 100%;
+	width: 200px;
+    height: 150px;
+    padding: 10px;
+}
+
+div img {
+    width: 70px;
+    height: 70px;
+}
+
+.main * {
+    vertical-align: middle;
+}
