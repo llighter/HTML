@@ -1,7 +1,7 @@
 section {
     display: inline;
     /*float: left;*/
-    border: thin solid black;
+    /*border: thin solid #1695A3;*/
     /* background-color: #FFD393; */
 }
 
@@ -50,4 +50,8 @@ table#t01 tr:nth-child(odd) {
 table#t01 th {
     background-color: black;
     color: white;
+}
+
+.lunch-ranking {
+    background-color: #E8E8E8;
 }
