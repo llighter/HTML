@@ -13,7 +13,6 @@ header {
     color: white;
     background-color: #004358;
     border: 1px solid red;
-    /* padding: 15px; */
 }
 
 .row::after {
@@ -28,17 +27,36 @@ header {
     display: inline;
     margin: 0;
 }
+
+div h3 {
+    background-color: #EB7F00;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 15px;
+    text-align: center;
+}
+
 .profile {
+    padding-top: 30%;
     max-width: 100%;
     width: 100%;
     height: auto;
 }
 .profile-detail {
-    padding: 10px;
     color: #333333;
     background-color: #E8E8E8;
     text-align: center;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.button {
+    background-color: #3498DB; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
 }
 
 footer {
@@ -54,7 +72,6 @@ footer {
 /* For mobile phones: */
 [class*="col-"] {
     float: left;
-    /* padding:15px; */
     border: 1px solid red;
     width: 100%;
 }

@@ -52,7 +52,8 @@ function setTable() {
         
         document.getElementById("img0"+(i+1)).src = "images/"+myArray[i].name+".jpg"
         document.getElementById("r0"+(i+1)).innerHTML = myArray[i].R;
-        document.getElementById("name0"+(i+1)).innerHTML = myArray[i].name;
+        document.getElementById("store0"+(i+1)).innerHTML = myArray[i].store;
+        document.getElementById("distance0"+(i+1)).innerHTML = myArray[i].distance+" Ка";
     }
 }
 

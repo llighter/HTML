@@ -5,7 +5,6 @@
     </title>
     <link rel="stylesheet" type="text/css" href="styles/style_main.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="styles/style_meal.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="styles/figure.css" media="screen" />    
 </head>
 <body>
     <header>
@@ -43,62 +42,78 @@
                             <option value="winter">겨울</option>
                         </select>
                         <br /><br />
-                        <input type="submit" value="확인해보기>>" onclick="call()"/>
+                        <input type="button" class="button" value="확인해보기>>" onclick="call()"/>
                     </form>
                 </div>
             </div>
         </div>
         <div class="col-7 lunch-ranking">
             <section class="col-12">
-                <section class="main col-7">
-                    <h1>A or B That's the problem.</h1>
+                <section class="main col-6">
+                    <h3>리그 오브 밥집</h3>
                     <img class="match" id="left" name="a" onclick="chooseLeft(this);"/>
-                    <span> vs. </span>
+                    <span id="vs"> vs. </span>
                     <img class="match" id="right" name="b" onclick="chooseRight(this);"/>
                 </section>
-                <section class="detail col-5">
+                <section class="detail col-6">
                     <div class="unit">
-                        <h1>Elo Rating</h1>
-                        <div id="div01">
-                            <img id="img01"/>
-                            <span id="r01"></span>
-                            <span id="name01"></span>
-                        </div>
-                        <div id="div02">
-                            <img id="img02"/>
-                            <span id="r02"></span>
-                            <span id="name02"></span>
-                        </div>
-                        <div id="div03">
-                            <img id="img03"/>
-                            <span id="r03"></span>
-                            <span id="name03"></span>
-                        </div>
-                        <div id="div04">
-                            <img id="img04"/>
-                            <span id="r04"></span>
-                            <span id="name04"></span>
-                        </div>
-                        <div id="div05">
-                            <img id="img05"/>
-                            <span id="r05"></span>
-                            <span id="name05"></span>
-                        </div>
-                        <div id="div06">
-                            <img id="img06"/>
-                            <span id="r06"></span>
-                            <span id="name06"></span>
-                        </div>
-                        <div id="div07">
-                            <img id="img07"/>
-                            <span id="r07"></span>
-                            <span id="name07"></span>
-                        </div>
-                        <div id="div08">
-                            <img id="img08"/>
-                            <span id="r08"></span>
-                            <span id="name08"></span>
-                        </div>
+                        <h3>밥집 랭킹</h3>
+                        <table id="t01">
+                            <tr>
+                                <th>사진</th>
+                                <th>Rating</th>
+                                <th>장소</th>
+                                <th>이동시간</th>
+                            </tr>
+                            <tr>
+                                <td><img id="img01"/></td>
+                                <td id="r01"></td>
+                                <td id="store01"></td>
+                                <td id="distance01"></td>
+                            </tr>
+                            <tr>
+                                <td><img id="img02"/></td>
+                                <td id="r02"></td>
+                                <td id="store02"></td>
+                                <td id="distance02"></td>
+                            </tr>
+                            <tr>
+                                <td><img id="img03"/></td>
+                                <td id="r03"></td>
+                                <td id="store03"></td>
+                                <td id="distance03"></td>
+                            </tr>
+                            <tr>
+                                <td><img id="img04"/></td>
+                                <td id="r04"></td>
+                                <td id="store04"></td>
+                                <td id="distance04"></td>
+                            </tr>
+                            <tr>
+                                <td><img id="img05"/></td>
+                                <td id="r05"></td>
+                                <td id="store05"></td>
+                                <td id="distance05"></td>
+                            </tr>
+                            <tr>
+                                <td><img id="img06"/></td>
+                                <td id="r06"></td>
+                                <td id="store06"></td>
+                                <td id="distance06"></td>
+                            </tr>
+                            <tr>
+                                <td><img id="img07"/></td>
+                                <td id="r07"></td>
+                                <td id="store07"></td>
+                                <td id="distance07"></td>
+                            </tr>
+                            <tr>
+                                <td><img id="img08"/></td>
+                                <td id="r08"></td>
+                                <td id="store08"></td>
+                                <td id="distance08"></td>
+                            </tr>
+                        </table>
                     </div>
                 </section>
             </section>
